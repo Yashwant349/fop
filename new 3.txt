@@ -1,0 +1,52 @@
+package strng;
+import java.util.*;
+import java.lang.*;
+public class Lexographic {
+	
+	static boolean fun(String str1,String str2) {
+		int i=0;
+		for( i=0;i<str1.length()&&i<str2.length();i++) {
+			if(str1.charAt(i)==str2.charAt(i)) {
+				continue;
+			}
+			else {
+			if(str1.charAt(i)<str2.charAt(i)) {
+			return true;
+				
+			}
+			else {
+			return false;
+			}
+		}
+		}
+		if(i==str1.length()) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	public static void main(String[] args) {
+	
+		String arr[]= {"demon","stefan","ric","lark"};
+	
+		for(int i=0;i<arr.length;i++) {
+		for(int j=0;j<arr.length-i-1;j++) {
+			if(fun(arr[j+1],arr[j])) {
+				String temp=arr[j];
+				arr[j]=arr[j+1];
+				arr[j+1]=temp;
+			}
+			
+		}
+		
+			
+		}
+		for(int k=0;k<arr.length;k++) {
+			System.out.print(arr[k]+" ");
+			}
+		
+	}
+
+}
